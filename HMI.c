@@ -14,10 +14,13 @@ uint8_t request_state[HMI_CHANNELS_NUMBER];
 
 HMI_ChkType HMI_Init(uint8_t HMI_groupID)
 {
+    HMI_ChkType RetVar;
     request_state[HMI_groupID] = IDLE;
 
 
-    return HMI_OK;
+    RetVar = HMI_OK;
+
+    return RetVar;
 }
 
 HMI_ChkType HMI_GetVersion(uint8_t HMI_groupID)
