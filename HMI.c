@@ -43,12 +43,12 @@ HMI_ChkType HMI_GetVersion(uint8_t HMI_groupID)
         UART_Tx_Init(data_frame_sent,6,CfgPtr->UART_ChannelID);
 
 
-        return HMI_OK;
+        RetVar = HMI_OK;
 
     }
     else
     {
-        return HMI_Busy;
+        RetVar = HMI_Busy;
     }
 
 
@@ -93,12 +93,12 @@ HMI_ChkType HMI_SelectPicture(uint8_t HMI_groupID, uint16_t Pic_ID)
         HMI_SelectPicture_Func_counter = 0;
 
 
-        return HMI_OK;
+        RetVar = HMI_OK;
 
     }
     else
     {
-        return HMI_Busy;
+        RetVar = HMI_Busy;
     }
 
 
@@ -133,12 +133,12 @@ HMI_ChkType HMI_GetPictureID(uint8_t HMI_groupID)
 
         UART_Tx_Init(data_frame_sent,6,CfgPtr->UART_ChannelID);
 
-        return HMI_OK;
+        RetVar = HMI_OK;
 
     }
     else
     {
-        return HMI_Busy;
+        RetVar = HMI_Busy;
     }
 
 
@@ -187,12 +187,12 @@ HMI_ChkType HMI_SetDataVariable(uint8_t HMI_groupID, uint16_t Var_ptr, uint16_t 
         UART_Tx_Init(data_frame_sent,8,CfgPtr->UART_ChannelID);
         HMI_SetDataVar_Func_counter = 0;
 
-        return HMI_OK;
+        RetVar = HMI_OK;
 
     }
     else
     {
-        return HMI_Busy;
+        RetVar = HMI_Busy;
     }
 
 
@@ -257,6 +257,7 @@ HMI_ChkType HMI_SetText(uint8_t HMI_groupID, uint16_t Var_ptr, uint8_t* string_p
 
                 UART_Tx_Init(data_frame_sent,total_frame_length,CfgPtr->UART_ChannelID);
                 HMI_SetText_Func_counter = 0;
+
                 RetVar = HMI_OK;
 
 
